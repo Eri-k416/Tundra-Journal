@@ -4,7 +4,7 @@ let slashcont = document.querySelector('.slash-container')
 let slash = document.querySelector('.slash')
 let glow = document.querySelector('.glow')
 
-window.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('load', ()=>{
 
     setTimeout(()=>{
 
