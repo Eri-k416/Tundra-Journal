@@ -62,13 +62,17 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.target === topSentinel) {
             isSticky = true; // If top sentinel is not intersecting, it's stuck
         } else if (entry.target === bottomSentinel) {
-            if (isSticky && entry.isIntersecting) {
+            if (entry.boundingClientRect.top < 0) {
+                console.log('test')
                 isSticky = false;
-            } 
-        } else if (entry.target === double && entry.isIntersecting) {
-            if (!isSticky) {
-                isSticky = true;
             }
+            if (isSticky && !entry.isIntersecting) {
+                isSticky = true;
+            } else if (isSticky) {
+                isSticky = false;
+            }
+        } else if (entry.target === double && entry.isIntersecting) {
+            isSticky = true;
         }
         // You can now use the 'isSticky' variable to update state or apply classes
         if (isSticky) {
