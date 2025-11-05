@@ -169,6 +169,12 @@ main aside {
     flex-direction: column;
     max-width: 500px;
 }
+main aside.is-sticky {
+    position: sticky;
+}
+main aside.is-sticky.top {
+    top: calc(5rem);
+}
 main aside .aside-image-container {
     display: flex;
     width: 100%;
